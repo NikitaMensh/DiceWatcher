@@ -1,6 +1,6 @@
 # DiceWatcher
 
-DiceWatcher is a computer vision system for **real-time detection, counting, and evaluation of dice throws**.  
+DiceWatcher is a computer vision system for real-time detection, counting, and evaluation of dice throws.  
 It is designed for tabletop wargames, where players often roll dozens of dice and apply complex rules. The system automates dice recognition and rule evaluation, letting players focus on gameplay.
 
 ## Features
