@@ -79,10 +79,3 @@ DiceWatcher/
 ## License
 
 MIT License. See [LICENSE](LICENSE).
-
-```
-
----
-
-Do you want me to also prepare a **requirements.txt** with the exact minimal dependencies (torch, opencv, ultralytics, etc.) so the repo is runnable out of the box?
-```
