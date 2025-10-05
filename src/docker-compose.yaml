@@ -1,0 +1,31 @@
+services:
+  api:
+    build:
+      context: ../
+      dockerfile: ./src/detection/Dockerfile
+    container_name: dice_api
+    ports:
+      - "8000:8000"
+    networks:
+      - dice
+
+  app:
+    build: 
+      context: ../
+      dockerfile: ./src/app/Dockerfile
+    container_name: dice_app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api:8000
+    networks:
+      - dice
+
+networks:
+  dice:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.50.0.0/16

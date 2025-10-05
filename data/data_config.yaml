@@ -1,0 +1,5 @@
+path: data
+train: images/train
+val: images/val
+test: images/test
+names: ["1","2","3","4","5","6"]
