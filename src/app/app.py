@@ -23,6 +23,16 @@ st.markdown("### Dice Face Detector")
 uploaded = st.file_uploader("Upload an image", type=["jpg","jpeg","png"])
 img = Image.open(uploaded).convert("RGB") if uploaded else None
 
+cctl = st.columns([1,1,1,1])
+with cctl[0]:
+    rule = st.selectbox("Rule", ["Sum of pips", "Successes (>= than threshold)", "Modifier hits"], index=0)
+with cctl[1]:
+    target = st.slider("Target", 2, 6, 5) if rule != "Sum of pips" else 5
+with cctl[2]:
+    modifier = st.number_input("Modifier", -3, 3, 0, 1) if rule == "Modifier hits" else 0
+with cctl[3]:
+    six_double = st.checkbox("6 counts as 2", value=False) if rule == "Modifier hits" else False
+
 col_img, col_pred = st.columns(2)
 with col_img:
     st.markdown("**Original**")
@@ -59,6 +69,22 @@ if st.button("Predict", type="primary", disabled=(img is None)):
         st.markdown("---")
         st.markdown("**Counts**")
         st.code(numbers, language="text")
+
+        def eval_rule(nums):
+            if rule == "Sum of pips":
+                return sum(nums)
+            if rule == "Successes (>= than threshold)":
+                return sum(1 for d in nums if d >= target)
+            # Wargame hits
+            hits = 0
+            for d in nums:
+                val = d + modifier
+                if val >= target:
+                    hits += 2 if six_double and d == 6 else 1
+            return hits
+
+        result = eval_rule(numbers)
+        st.success(f"Result ({rule}): {result}")
 
         # downloads
         d1, d2 = st.columns(2)
