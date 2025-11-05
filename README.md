@@ -2,8 +2,6 @@
 
 Real-time dice recognition and Warhammer 40,000 mechanics engine
 
----
-
 ## Overview
 DiceWatcher is a computer-vision application for recognizing dice faces in real time and applying tabletop game mechanics such as hit, wound, save, and damage resolution.
 
@@ -15,8 +13,6 @@ It consists of:
 
 A short demonstration video is available here:  
 [Demo video on Google Drive](https://drive.google.com/file/d/10BYVVmny9c7KtTDKZ7CavrLh3ipLILNw/view?usp=sharing)
-
----
 
 ## Features
 
@@ -34,8 +30,6 @@ A short demonstration video is available here:
   - Upload custom JSON unit files describing Ballistic Skill, Strength, AP, Damage, etc.
 - Dockerized architecture
   - Independent containers for API (`dice_api`) and web app (`dice_app`).
-
----
 
 ## Installation
 
@@ -100,15 +94,11 @@ docker compose run --device /dev/video0:/dev/video2 dice_app
 
 Upload this JSON through the web app sidebar to compute damage results.
 
----
-
 ## Current Results
 
 * mAP@0.5 = 0.99 for opaque dice.
 * Real-time processing at 15–20 FPS on CPU.
 * Stable integration of live inference, rule engine, and game mechanics.
-
----
 
 ## Known Issues
 
@@ -116,15 +106,11 @@ Upload this JSON through the web app sidebar to compute damage results.
 * When using Docker on macOS/Windows, direct webcam access is limited.
 * Streamlit event loop may block when running long camera sessions on some systems.
 
----
-
 ## Planned Work
 
 * Improve recognition of transparent dice.
 * Add new mechanics: mortal wounds, exploding 6s, weapon-specific rules.
 * Implement full battle simulation for multi-unit combat probability analysis.
-
----
 
 ## Author
 
