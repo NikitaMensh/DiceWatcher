@@ -1,0 +1,21 @@
+{
+  "unit": "Skitarii Rangers",
+  "models": 10,
+  "bs": 4,
+  "weapons": [
+    {
+      "name": "Galvanic Rifle",
+      "type": "Rapid Fire",
+      "attacks_per_model": 1,
+      "rapid_fire_multiplier": 2,
+      "strength": 4,
+      "ap": 0,
+      "damage": 1
+    }
+  ],
+  "abilities": {
+    "reroll_hit_ones": false,   
+    "hit_mod": 0,               
+    "wound_mod": 0              
+  }
+}
