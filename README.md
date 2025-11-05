@@ -64,8 +64,6 @@ Note: On Linux, grant webcam access:
 docker compose run --device /dev/video0:/dev/video2 dice_app
 ```
 
----
-
 ## Example Unit Configuration
 
 ```json
@@ -117,8 +115,6 @@ Upload this JSON through the web app sidebar to compute damage results.
 Nikita Menshikov
 Innopolis University
 [n.menshikov@innopolis.university](mailto:n.menshikov@innopolis.university)
-
----
 
 ## License
 
